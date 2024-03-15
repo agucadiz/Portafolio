@@ -23,7 +23,6 @@ html {
     border-radius: 5px;
 }
 
-/**TODO: Fuente y fondo **/
 body {
     font-family: "Oswald", sans-serif;
     background: url("../img/prism1.png") repeat;
@@ -39,6 +38,18 @@ body {
 
 img {
     max-width: 100%;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.img img {
+    max-width: 100%;
+    height: auto;
 }
 
 .fondo {
@@ -74,6 +85,52 @@ p {
     bottom: 1.25rem;
     right: 1.25rem;
     z-index: 1;
+}
+
+/**TODO: Media Queries **/
+@media only screen and (min-width: 48rem) {
+    .menu {
+        grid-template-columns: 10% auto 10%;
+    }
+
+    .menu .contenedor-menu a {
+        font-size: 1.1rem;
+    }
+
+    .menu .idiomas {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 100vh;
+    }
+
+    .header .contenedor-header {
+        height: 100%;
+    }
+
+    .header .contenedor-header .nombre {
+        font-size: 4rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 15px;
+    }
+
+    .header .contenedor-header h2 {
+        min-width: 35.375rem;
+        max-width: 35.375rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto a img {
+    filter: grayscale(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
+    filter: grayscale(100);
 }
 
 /**TODO: Menú de navegación **/
@@ -145,19 +202,104 @@ p {
     opacity: 0.5;
 }
 
-/**TODO: Media Queries **/
-@media only screen and (min-width: 48rem) {
-    /**TODO: Menú de navegación **/
-    .menu {
-        grid-template-columns: 10% auto 10%;
+/**TODO: Header **/
+.header {
+    height: 30rem;
+    width: 100%;
+}
+
+.header .contenedor-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .contenedor-header .nombre {
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    font-family: "Indie Flower", sans-serif;
+    font-weight: bold;
+}
+
+.header .contenedor-header .nombre .fade-in {
+    animation: fadeIn 3s;
+}
+
+/** Animación Header **/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     }
 
-    .menu .contenedor-menu a {
-        font-size: 1.1rem;
+    50% {
+        opacity: 0.5;
     }
 
-    .menu .idiomas {
-        display: grid;
-        flex-direction: column;
+    100% {
+        opacity: 1;
     }
 }
+
+.header .contenedor-header h2 {
+    width: 14.75rem;
+    text-align: center;
+    font-family: "Indie Flower", sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+}
+
+.header .contenedor-header blockquote {
+    line-height: 1.5;
+    font-style: italic;
+    color: #9aa1a9;
+}
+
+/**TODO: Sobre mi **/
+/** Media Queries **/
+.main .sobre-mi {
+    min-height: 100vh;
+    padding: 3rem 0;
+    background: #ffffff;
+    color: #000000;
+    margin-bottom: 3rem;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto {
+    padding: 1.5rem 0;
+    background: #101010;
+    color: red;
+    font-family: monospace, Arial;
+    width: 70%;
+    min-height: 46rem;
+    margin: 0 auto;
+    border-radius: 0.625rem;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto #pow-txt {
+    display: none;
+    color: #e3e3e3;
+    font-weight: 100;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto .direccion {
+    margin-bottom: 1rem;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto #pow-txt {
+    margin-bottom: 1rem;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto .descripcion {
+    color: grey;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.main .sobre-mi .contenedor-sobre-mi .texto p {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/**TODO: Proyectos **/
