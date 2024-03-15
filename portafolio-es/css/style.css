@@ -148,7 +148,6 @@ p {
 /**TODO: Media Queries **/
 @media only screen and (min-width: 48rem) {
     /**TODO: Menú de navegación **/
-
     .menu {
         grid-template-columns: 10% auto 10%;
     }
