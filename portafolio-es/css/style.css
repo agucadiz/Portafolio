@@ -25,10 +25,12 @@ html {
 
 body {
     font-family: "Oswald", sans-serif;
-    background: url("../img/prism1.png") repeat;
+    background: url("../img/fondo5.png") repeat;
     background-attachment: fixed;
+    background-size: 1310px 747px; /* Cambia los valores según lo deseado */
     color: #ffffff;
 }
+
 
 .contenedor {
     width: 95%;
