@@ -544,6 +544,10 @@ p {
     transition: 0.2s linear;
 }
 
+.footer .contenedor .redes-sociales .whatsapp {
+    color: #34CC34;
+}
+
 .footer .contenedor .redes-sociales .linkedin {
     color: #0e76a8;
 }
@@ -577,6 +581,10 @@ p {
     transform: rotate(45deg);
     left: -110%;
     top: 90%;
+}
+
+.footer .contenedor .redes-sociales .whatsapp::before {
+    background: #34CC34;
 }
 
 .footer .contenedor .redes-sociales .linkedin::before {
