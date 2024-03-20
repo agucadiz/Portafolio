@@ -38,7 +38,7 @@
                 <img src="img/esp.png" class="bandera active" alt="Español" title="Español">
             </div>
             <div class="eng idioma">
-                <a href="">
+                <a href="English">
                     <img src="img/english.png" class="bandera" alt="English" title="Inglés">
                 </a>
             </div>
@@ -58,7 +58,7 @@
     <!--TODO: Main del portafolio-->
     <main class="main">
         <!--TODO: Sobre mí-->
-        <section class="sobre-mi">
+        <section class="sobre-mi" id="sobre-mi">
             <div class="contenedor contenedor-sobre-mi">
                 <h2 class="titulo" id="sobre-mi">Sobre mí</h2>
                 <div class="texto">
@@ -101,7 +101,7 @@
             </div>
         </section>
         <!--TODO: Proyectos-->
-        <section class="proyectos">
+        <section class="proyectos" id="proyectos">
             <h2 class="titulo" id="proyectos">Algunos proyectos realizados</h2>
 
             <div class="contenedor contenedor-proyectos">
@@ -161,7 +161,7 @@
                 </div>
         </section>
         <!--TODO: Habilidades-->
-        <div class="conocimientos">
+        <section class="conocimientos" id="conocimientos">
             <h2 class="titulo" id="conocimientos">Habilidades tecnológicas</h2>
 
             <div class="contenedor">
@@ -347,7 +347,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--TODO: Certificados-->
         <section class="certificados" id="certificados">
             <h2 class="titulo" id="certificados">Certificados obtenidos</h2>
@@ -378,8 +378,8 @@
 
     <!--TODO: Footer-->
     <footer class="footer">
-        <div class="contenedor">
-            <div class="redes-sociales" id="contacto">
+        <section class="contenedor" class="contacto" id="contacto">
+            <div class="redes-sociales">
                 <!-- Gmail -->
                 <a href="mailto:agustinpedrote82@gmail.com" target="_blank" class="social gmail" title="Gmail">
                     <i class="far fa-envelope"></i>
@@ -410,8 +410,8 @@
                 <a href="https://www.youtube.com/channel/UCQeapdTEawbwR9jXjlB7LPw" target="_blank"
                     class="social youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
-        </div>
-        
+        </section>
+
         <div class="footer-info">
             <p class="author">Desarrollado por Agustín Pedrote en 2024</p>
             <p class="visits">
@@ -425,6 +425,12 @@
         <span><i class="boton-arriba fa fa-chevron-up" id="boton-arriba" aria-hidden="true"></i></span>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/t.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
 </body>
 
 </html>
