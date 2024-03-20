@@ -27,7 +27,8 @@ body {
     font-family: "Oswald", sans-serif;
     background: url("../img/fondo5.png") repeat;
     background-attachment: fixed;
-    background-size: 1310px 747px; /* Cambia los valores según lo deseado */
+    background-size: 1310px 747px;
+    /* Cambia los valores según lo deseado */
     color: #ffffff;
 }
 
@@ -546,12 +547,20 @@ p {
     transition: 0.2s linear;
 }
 
+.footer .contenedor .redes-sociales .gmail {
+    color: #EB4132;
+}
+
 .footer .contenedor .redes-sociales .whatsapp {
     color: #34CC34;
 }
 
 .footer .contenedor .redes-sociales .linkedin {
     color: #0e76a8;
+}
+
+.footer .contenedor .redes-sociales .github {
+    color: #333333;
 }
 
 .footer .contenedor .redes-sociales .instagram {
@@ -564,10 +573,6 @@ p {
 
 .footer .contenedor .redes-sociales .youtube {
     color: #c4302b;
-}
-
-.footer .contenedor .redes-sociales .github {
-    color: #333333;
 }
 
 .footer .contenedor .redes-sociales .social:hover i {
@@ -585,12 +590,20 @@ p {
     top: 90%;
 }
 
+.footer .contenedor .redes-sociales .gmail::before {
+    background: #EB4132;
+}
+
 .footer .contenedor .redes-sociales .whatsapp::before {
     background: #34CC34;
 }
 
 .footer .contenedor .redes-sociales .linkedin::before {
     background: #0e76a8;
+}
+
+.footer .contenedor .redes-sociales .github::before {
+    background: #333333;
 }
 
 .footer .contenedor .redes-sociales .instagram::before {
@@ -603,10 +616,6 @@ p {
 
 .footer .contenedor .redes-sociales .youtube::before {
     background: #c4302b;
-}
-
-.footer .contenedor .redes-sociales .github::before {
-    background: #333333;
 }
 
 .footer .contenedor .redes-sociales .social:hover::before {
@@ -640,23 +649,85 @@ p {
     font-weight: 700;
 }
 
-.autor {
-    font-size: 1rem;
+.social-media .social {
+    font-size: 24px;
+    color: #555;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-info {
     text-align: center;
-    font-weight: bold;
+}
+
+.author,
+.visits {
+    font-size: 16px;
     color: black;
 }
 
-.visitas {
-    font-size: 0.9rem;
-    text-align: center;
-    color: black;
-}
-
-.visitas img {
-    display: block;
-    margin: 0 auto;
+.visits img {
     max-width: 100%;
     height: auto;
+    margin-left: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/** Media Queries **/
+@media only screen and (min-width: 48rem) {
+    .menu {
+        grid-template-columns: 10% auto 10%;
+    }
+
+    .menu .contenedor-menu a {
+        font-size: 1.1rem;
+    }
+
+    .menu .idiomas {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 100vh;
+    }
+
+    .header .contenedor-header {
+        height: 100%;
+    }
+
+    .header .contenedor-header .nombre {
+        font-size: 4rem;
+        letter-spacing: 0.4rem;
+    }
+
+    .header .contenedor-header h2 {
+        min-width: 35.375rem;
+        max-width: 35.375rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
+/** Media query para ajustar el tamaño de los iconos en pantallas pequeñas **/
+@media (max-width: 700px) {
+    .footer .contenedor .redes-sociales .social {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .footer .contenedor .redes-sociales .social i {
+        line-height: 3.125rem;
+        font-size: 1.25rem;
+    }
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto a img {
+    filter: grayscale(0);
+    transition: all 0.5s ease-in-out;
+    border: 0.125rem solid #969a97;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
+    filter: grayscale(100);
 }
