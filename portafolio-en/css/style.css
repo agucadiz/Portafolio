@@ -27,11 +27,9 @@ body {
     font-family: "Oswald", sans-serif;
     background: url("../img/fondo5.png") repeat;
     background-attachment: fixed;
-    background-size: 1310px 747px;
-    /* Cambia los valores según lo deseado */
+    background-size: 1210px 647px;
     color: #ffffff;
 }
-
 
 .contenedor {
     width: 95%;
@@ -304,7 +302,7 @@ p {
     color: red;
     font-family: monospace, Arial;
     width: 70%;
-    min-height: 46rem;
+    min-height: 40rem;
     margin: 0 auto;
     border-radius: 0.625rem;
 }
@@ -426,15 +424,15 @@ p {
 
 .main .conocimientos .contenedor .contenedor-conocimientos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
-    grid-row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); 
+    grid-gap: 2rem; 
 }
 
 .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
-    margin: 4rem auto 0 auto;
+    margin: 0 auto; 
     position: relative;
-    width: 18.75rem;
-    height: 20rem;
+    width: 14rem; 
+    height: 18rem; 
     background: #262626;
     overflow: hidden;
 }
@@ -734,19 +732,6 @@ p {
         max-width: 35.375rem;
         font-size: 2.5rem;
         letter-spacing: 0.5rem;
-    }
-}
-
-/** Media query para ajustar el tamaño de los iconos en pantallas pequeñas **/
-@media (max-width: 700px) {
-    .footer .contenedor .redes-sociales .social {
-        width: 3.125rem;
-        height: 3.125rem;
-    }
-
-    .footer .contenedor .redes-sociales .social i {
-        line-height: 3.125rem;
-        font-size: 1.25rem;
     }
 }
 

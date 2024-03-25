@@ -303,7 +303,7 @@ p {
     color: red;
     font-family: monospace, Arial;
     width: 70%;
-    min-height: 46rem;
+    min-height: 40rem;
     margin: 0 auto;
     border-radius: 0.625rem;
 }
