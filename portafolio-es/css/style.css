@@ -406,15 +406,27 @@ p {
     margin: 0 auto;
 }
 
+/* Estilos para tablets */
+@media only screen and (max-width: 1080px) {
+    .main .sobre-mi {
+        min-height: 80vh;
+    }
+
+    .main .sobre-mi .contenedor-sobre-mi .texto {
+        min-height: 45rem;
+    }
+}
+
+/* Estilos para móviles */
 @media only screen and (max-width: 768px) {
     .main .sobre-mi .contenedor-sobre-mi .texto {
-        width: 90%;
-        min-height: 44rem;
+        width: 95%;
+        min-height: 36rem;
         padding: 1rem;
     }
 
     .main .sobre-mi .contenedor-sobre-mi .texto .descripcion {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         line-height: 1.3;
     }
 
@@ -648,29 +660,37 @@ p {
 /* Estilos para pantallas medianas (tablet) */
 @media (max-width: 1080px) {
     .main .conocimientos .contenedor .contenedor-conocimientos {
-        grid-template-columns: repeat(2, 1fr); /* Dos líneas de cuatro columnas */
-        grid-gap: 1rem; /* Espaciado reducido para compactar */
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos líneas de cuatro columnas */
+        grid-gap: 1rem;
+        /* Espaciado reducido para compactar */
     }
 }
 
 /* Estilos para pantallas pequeñas (móvil) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .main .conocimientos .contenedor .contenedor-conocimientos {
-        grid-template-columns: repeat(2, 1fr); /* Dos líneas de cuatro columnas */
-        grid-gap: 1rem; /* Espaciado reducido para compactar */
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos líneas de cuatro columnas */
+        grid-gap: 1rem;
+        /* Espaciado reducido para compactar */
     }
 
     .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
-        width: 8rem; /* Ancho reducido */
-        height: 12rem; /* Altura ajustada */
+        width: 8rem;
+        /* Ancho reducido */
+        height: 12rem;
+        /* Altura ajustada */
     }
 
     .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .cambio {
-        display: none; /* Oculta el elemento solo en móvil */
+        display: none;
+        /* Oculta el elemento solo en móvil */
     }
 
     .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .oculto {
-        display: none; /* Oculta el elemento solo en móvil */
+        display: none;
+        /* Oculta el elemento solo en móvil */
     }
 }
 
@@ -696,11 +716,6 @@ p {
 
 .main .certificados .contenedor-certificados img:hover {
     transform: scale(1.1);
-}
-
-/* Estilos para pantallas pequeñas (móvil) */
-@media (max-width: 480px) {
-    
 }
 
 /**TODO: Footer **/
