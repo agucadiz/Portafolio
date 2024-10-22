@@ -358,7 +358,28 @@ p {
     transform: scale(1.05);
 }
 
+/* Estilos para tablets */
+@media only screen and (max-width: 1080px) {
+    .header {
+        height: 38rem;
+        width: 100%;
+    }
 
+    .header .contenedor-header {
+        height: 80%;
+    }
+
+    .header .contenedor-header .nombre {
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+        font-family: "Indie Flower", sans-serif;
+        font-weight: bold;
+    }
+
+    .header .contenedor-header .nombre .fade-in {
+        animation: fadeIn 3s;
+    }
+}
 
 /**TODO: Sobre mi **/
 /** Media Queries **/
@@ -413,7 +434,7 @@ p {
     }
 
     .main .sobre-mi .contenedor-sobre-mi .texto {
-        min-height: 45rem;
+        min-height: 48rem;
     }
 }
 
@@ -668,7 +689,7 @@ p {
 }
 
 /* Estilos para pantallas pequeñas (móvil) */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .main .conocimientos .contenedor .contenedor-conocimientos {
         grid-template-columns: repeat(2, 1fr);
         /* Dos líneas de cuatro columnas */
@@ -717,6 +738,17 @@ p {
 .main .certificados .contenedor-certificados img:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 780px) {
+    .main .certificados .contenedor-certificados {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        grid-gap: 2rem;
+    }
+    
+}
+
 
 /**TODO: Footer **/
 .footer {
