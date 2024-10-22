@@ -77,3 +77,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+function disableCertificateLinks() {
+  const certificados = document.querySelectorAll('.contenedor-certificados a');
+
+  if (window.innerWidth <= 780) {
+    certificados.forEach(certificado => {
+      certificado.removeAttribute('href'); // Elimina el atributo href
+      certificado.style.pointerEvents = 'none'; // Desactiva el clic
+    });
+  } else {
+    certificados.forEach(certificado => {
+      // Restaura el atributo href si existe en data-href
+      if (certificado.dataset.href) {
+        certificado.setAttribute('href', certificado.dataset.href);
+        certificado.style.pointerEvents = 'auto'; // Activa el clic
+      }
+    });
+  }
+}
+
+// Ejecutar la función al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+  disableCertificateLinks(); // Llama a la función al cargar la página
+
+  // También agrega un event listener para detectar cambios en el tamaño de la ventana
+  window.addEventListener('resize', disableCertificateLinks);
+});
+
+

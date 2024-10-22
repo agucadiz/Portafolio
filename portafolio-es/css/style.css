@@ -313,6 +313,53 @@ p {
     color: #9aa1a9;
 }
 
+/* Estilo inicial para ocultar el botón al cargar la página */
+.btn-contacto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #c90c0f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    opacity: 0;
+    /* Oculto inicialmente */
+    transform: translateY(20px);
+    /* Desplazado hacia abajo inicialmente */
+    animation: fadeInUp 1s ease forwards;
+    /* Animación para que aparezca */
+}
+
+/* Animación para que el botón aparezca y suba */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Desplazado hacia abajo */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Posición final */
+    }
+}
+
+.btn-contacto:hover {
+    background-color: #a0090d;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+
+
 /**TODO: Sobre mi **/
 /** Media Queries **/
 .main .sobre-mi {
@@ -329,7 +376,7 @@ p {
     color: red;
     font-family: monospace, Arial;
     width: 70%;
-    min-height: 40rem;
+    min-height: 35rem;
     margin: 0 auto;
     border-radius: 0.625rem;
 }
@@ -386,39 +433,68 @@ p {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Distribuye los proyectos en filas/columnas */
     grid-column-gap: 2rem;
+    /* Espacio entre columnas */
     grid-row-gap: 2rem;
+    /* Espacio entre filas */
 }
 
 .main .proyectos .contenedor-proyectos .proyecto {
     margin: auto;
     width: 250px;
-    height: 350px;
+    height: 290px;
+    /* Tamaño fijo para cada proyecto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.125rem solid #969a97;
+    overflow: hidden;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto {
+    height: 60%;
+    /* El 60% del contenedor será para la imagen */
+    overflow: hidden;
+    /* Asegura que nada sobresalga */
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto img {
+    width: 100%;
+    /* La imagen llenará el ancho del contenedor */
+    height: 100%;
+    /* La imagen llenará la altura del contenedor */
+    object-fit: cover;
+    /* La imagen cubre todo el espacio sin deformarse */
+    display: block;
+    /* Elimina el espacio extra alrededor de la imagen */
+    margin: 0;
+    /* Asegura que no haya márgenes */
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info {
     padding: 1rem 0.5rem;
-    height: 10.625rem;
+    height: 40%;
+    /* El 40% del contenedor será para la información */
     background: #ffffff;
     color: #000000;
-    border: 0.125rem solid #969a97;
+    text-align: center;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info h4 {
     text-align: left;
-    margin-bottom: 2.5rem;
-    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info h5 {
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
     font-weight: normal;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info p {
-    text-align: center;
     font-size: 0.9rem;
     font-weight: bold;
 }
@@ -443,18 +519,20 @@ p {
     color: #FF291A;
 }
 
-.main .proyectos .contenedor-proyectos .proyecto .info p .sql {
+.main .proyectos .contenedor-proyectos .proyecto .info p .livewire {
+    color: #EB699F;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .info p .mysql {
+    color: #005E87;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .info p .postgre {
     color: #336791;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info p .javascript {
     color: #DAB92D;
-}
-
-.main .proyectos .contenedor-proyectos .proyecto .info .foto img {
-    width: 100%;
-    min-height: 11.25rem;
-    vertical-align: top;
 }
 
 /**TODO: Habilidades **/
@@ -478,9 +556,9 @@ p {
     margin: 0 auto;
     /* Ajuste de margen */
     position: relative;
-    width: 14rem;
+    width: 12rem;
     /* Modificado el ancho de las tarjetas */
-    height: 18rem;
+    height: 16rem;
     /* Ajuste de la altura */
     background: #262626;
     overflow: hidden;
@@ -567,6 +645,35 @@ p {
     line-height: 1.65;
 }
 
+/* Estilos para pantallas medianas (tablet) */
+@media (max-width: 1080px) {
+    .main .conocimientos .contenedor .contenedor-conocimientos {
+        grid-template-columns: repeat(2, 1fr); /* Dos líneas de cuatro columnas */
+        grid-gap: 1rem; /* Espaciado reducido para compactar */
+    }
+}
+
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 480px) {
+    .main .conocimientos .contenedor .contenedor-conocimientos {
+        grid-template-columns: repeat(2, 1fr); /* Dos líneas de cuatro columnas */
+        grid-gap: 1rem; /* Espaciado reducido para compactar */
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
+        width: 8rem; /* Ancho reducido */
+        height: 12rem; /* Altura ajustada */
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .cambio {
+        display: none; /* Oculta el elemento solo en móvil */
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .oculto {
+        display: none; /* Oculta el elemento solo en móvil */
+    }
+}
+
 /**TODO: Certificados **/
 .main .certificados {
     min-height: 100vh;
@@ -589,6 +696,11 @@ p {
 
 .main .certificados .contenedor-certificados img:hover {
     transform: scale(1.1);
+}
+
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 480px) {
+    
 }
 
 /**TODO: Footer **/
