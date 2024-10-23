@@ -678,29 +678,20 @@ p {
     line-height: 1.65;
 }
 
-/* Estilos para pantallas medianas (tablet) */
-@media (max-width: 1080px) {
-    .main .conocimientos .contenedor .contenedor-conocimientos {
-        grid-template-columns: repeat(2, 1fr);
-        /* Dos líneas de cuatro columnas */
-        grid-gap: 1rem;
-        /* Espaciado reducido para compactar */
-    }
-}
-
 /* Estilos para pantallas pequeñas (móvil) */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .main .conocimientos .contenedor .contenedor-conocimientos {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
         /* Dos líneas de cuatro columnas */
         grid-gap: 1rem;
         /* Espaciado reducido para compactar */
     }
 
     .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
-        width: 8rem;
+        width: 6rem;
         /* Ancho reducido */
-        height: 12rem;
+        height: 10rem;
         /* Altura ajustada */
     }
 
@@ -743,10 +734,11 @@ p {
     .main .certificados .contenedor-certificados {
         display: grid;
         justify-content: center;
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas */
         grid-gap: 2rem;
     }
-    
+
 }
 
 
