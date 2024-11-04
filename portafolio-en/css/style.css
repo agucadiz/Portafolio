@@ -12,6 +12,7 @@ html {
 
 ::-webkit-scrollbar {
     width: 10px;
+    /* Ancho del scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -20,17 +21,22 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background-color: #e80000;
+    /* Color rojo para el scrollbar */
     border-radius: 5px;
 }
 
+/* Estilos generales para el cuerpo del documento */
 body {
     font-family: "Oswald", sans-serif;
     background: url("../img/fondo5.png") repeat;
+    /* Fondo con imagen repetida */
     background-attachment: fixed;
     background-size: 1210px 647px;
     color: #ffffff;
+    /* Color del Titulo inicial y de las secciones */
 }
 
+/* Estilos para contenedores generales */
 .contenedor {
     width: 95%;
     max-width: 1200px;
@@ -55,8 +61,11 @@ img {
 
 .fondo {
     background-color: white;
+    /* Fondo blanco del div de habilidades*/
+
 }
 
+/* Estilos generales para todos los títulos y párrafos */
 h1,
 h2,
 h3,
@@ -68,6 +77,7 @@ p {
     padding: 0;
 }
 
+/* Estilo para el título principal */
 .titulo {
     margin-bottom: 4rem;
     text-align: center;
@@ -75,6 +85,7 @@ p {
     font-weight: 500;
 }
 
+/* Estilo del botón para desplazarse hacia arriba */
 .boton-arriba {
     padding: 1rem;
     background: rgba(232, 0, 0, 0.7);
@@ -88,7 +99,8 @@ p {
     z-index: 1;
 }
 
-/**TODO: Media Queries **/
+/* Media query para pantallas con un ancho mínimo de 48rem (768px)*/
+
 @media only screen and (min-width: 48rem) {
     .menu {
         grid-template-columns: 10% auto 10%;
@@ -140,6 +152,7 @@ p {
     margin-top: 2rem;
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.5);
+    /* Estilo transparente */
     border-top: 0.1rem solid rgba(86, 86, 86, 0.5);
     border-bottom: 0.1rem solid rgba(86, 86, 86, 0.5);
     position: sticky;
@@ -185,12 +198,13 @@ p {
     color: #c90c0f;
 }
 
-/** Estilos para el menú activo **/
+/* Estilos para el menú activo */
 .menu a.activo {
     position: relative;
     text-decoration: none;
 }
 
+/* subrayado */
 .menu a.activo::after {
     content: '';
     position: absolute;
@@ -232,7 +246,7 @@ p {
     opacity: 0.5;
 }
 
-/** Estilos para dispositivos móviles **/
+/* Estilos para dispositivos móviles */
 @media only screen and (max-width: 768px) {
     .menu {
         grid-template-columns: 1fr;
@@ -283,7 +297,7 @@ p {
     animation: fadeIn 3s;
 }
 
-/** Animación Header **/
+/* Animación Header */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -312,12 +326,80 @@ p {
     color: #9aa1a9;
 }
 
+/* Estilo inicial para ocultar el botón al cargar la página */
+.btn-contacto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #c90c0f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    opacity: 0;
+    /* Oculto inicialmente */
+    transform: translateY(20px);
+    /* Desplazado hacia abajo inicialmente */
+    animation: fadeInUp 1s ease forwards;
+    /* Animación para que aparezca */
+}
+
+/* Animación para que el botón aparezca y suba */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Desplazado hacia abajo */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Posición final */
+    }
+}
+
+.btn-contacto:hover {
+    background-color: #a0090d;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Estilos para tablets */
+@media only screen and (max-width: 1080px) {
+    .header {
+        height: 38rem;
+        width: 100%;
+    }
+
+    .header .contenedor-header {
+        height: 80%;
+    }
+
+    .header .contenedor-header .nombre {
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+        font-family: "Indie Flower", sans-serif;
+        font-weight: bold;
+    }
+
+    .header .contenedor-header .nombre .fade-in {
+        animation: fadeIn 3s;
+    }
+}
+
 /**TODO: Sobre mi **/
-/** Media Queries **/
 .main .sobre-mi {
     min-height: 100vh;
     padding: 3rem 0;
     background: #ffffff;
+    /* Color del fondo */
     color: #000000;
     margin-bottom: 3rem;
 }
@@ -328,7 +410,7 @@ p {
     color: red;
     font-family: monospace, Arial;
     width: 70%;
-    min-height: 40rem;
+    min-height: 35rem;
     margin: 0 auto;
     border-radius: 0.625rem;
 }
@@ -358,15 +440,27 @@ p {
     margin: 0 auto;
 }
 
+/* Estilos para tablets */
+@media only screen and (max-width: 1080px) {
+    .main .sobre-mi {
+        min-height: 80vh;
+    }
+
+    .main .sobre-mi .contenedor-sobre-mi .texto {
+        min-height: 48rem;
+    }
+}
+
+/* Estilos para móviles */
 @media only screen and (max-width: 768px) {
     .main .sobre-mi .contenedor-sobre-mi .texto {
-        width: 90%;
-        min-height: 44rem;
+        width: 95%;
+        min-height: 36rem;
         padding: 1rem;
     }
 
     .main .sobre-mi .contenedor-sobre-mi .texto .descripcion {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         line-height: 1.3;
     }
 
@@ -385,43 +479,70 @@ p {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Distribuye los proyectos en filas/columnas */
     grid-column-gap: 2rem;
+    /* Espacio entre columnas */
     grid-row-gap: 2rem;
+    /* Espacio entre filas */
 }
 
 .main .proyectos .contenedor-proyectos .proyecto {
     margin: auto;
     width: 250px;
-    height: 350px;
+    height: 290px;
+    /* Tamaño fijo para cada proyecto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.125rem solid #969a97;
+    overflow: hidden;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto {
+    height: 60%;
+    /* El 60% del contenedor será para la imagen */
+    overflow: hidden;
+    /* Asegura que nada sobresalga */
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La imagen cubre todo el espacio sin deformarse */
+    display: block;
+    /* Elimina el espacio extra alrededor de la imagen */
+    margin: 0;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info {
     padding: 1rem 0.5rem;
-    height: 10.625rem;
+    height: 40%;
+    /* El 40% del contenedor será para la información */
     background: #ffffff;
     color: #000000;
-    border: 0.125rem solid #969a97;
+    text-align: center;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info h4 {
     text-align: left;
-    margin-bottom: 2.5rem;
-    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info h5 {
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
     font-weight: normal;
 }
 
 .main .proyectos .contenedor-proyectos .proyecto .info p {
-    text-align: center;
     font-size: 0.9rem;
     font-weight: bold;
 }
 
+/* Colores de las tecnologías utilizadas */
 .main .proyectos .contenedor-proyectos .proyecto .info p .html {
     color: #E44D26;
 }
@@ -442,7 +563,15 @@ p {
     color: #FF291A;
 }
 
-.main .proyectos .contenedor-proyectos .proyecto .info p .sql {
+.main .proyectos .contenedor-proyectos .proyecto .info p .livewire {
+    color: #EB699F;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .info p .mysql {
+    color: #005E87;
+}
+
+.main .proyectos .contenedor-proyectos .proyecto .info p .postgre {
     color: #336791;
 }
 
@@ -450,16 +579,11 @@ p {
     color: #DAB92D;
 }
 
-.main .proyectos .contenedor-proyectos .proyecto .info .foto img {
-    width: 100%;
-    min-height: 11.25rem;
-    vertical-align: top;
-}
-
 /**TODO: Habilidades **/
 .main .conocimientos {
     min-height: 100vh;
     background: #ffffff;
+    /* Color del fondo */
     color: #000000;
     padding: 3rem 0;
     margin-bottom: 3rem;
@@ -474,8 +598,8 @@ p {
 .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
     margin: 0 auto;
     position: relative;
-    width: 14rem;
-    height: 18rem;
+    width: 12rem;
+    height: 16rem;
     background: #262626;
     overflow: hidden;
 }
@@ -509,12 +633,12 @@ p {
     transform: rotate(225deg);
 }
 
-/** Efecto tarjeta habilidades **/
+/* Efecto tarjeta habilidades */
 .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .cambio {
     pointer-events: none;
     border-radius: 50%;
     color: #000000;
-    background: #ffffff;
+    background: #F5F5F5;
     transition: 0.5s;
     text-align: center;
     line-height: 3.125rem;
@@ -561,6 +685,38 @@ p {
     line-height: 1.65;
 }
 
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 600px) {
+    .main .conocimientos .contenedor .contenedor-conocimientos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta {
+        width: 6rem;
+        height: 10rem;
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .cambio {
+        display: none;
+        /* Oculta el elemento solo en móvil */
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .oculto {
+        display: none;
+        /* Oculta el elemento solo en móvil */
+    }
+
+    /* Fuente transparente para que no se vea */
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .detalles h3 {
+        color: transparent;
+    }
+
+    .main .conocimientos .contenedor .contenedor-conocimientos .tarjeta .detalles p {
+        color: transparent;
+    }
+}
+
 /**TODO: Certificados **/
 .main .certificados {
     min-height: 100vh;
@@ -585,9 +741,19 @@ p {
     transform: scale(1.1);
 }
 
+@media (max-width: 780px) {
+    .main .certificados .contenedor-certificados {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
 /**TODO: Footer **/
 .footer {
     background: #ffffff;
+    /* Color del fondo */
     color: #000000;
     padding: 2rem 0 0 0;
 }
@@ -632,18 +798,6 @@ p {
     color: #333333;
 }
 
-.footer .contenedor .redes-sociales .instagram {
-    color: #bc2a8d;
-}
-
-.footer .contenedor .redes-sociales .twitter {
-    color: #00acee;
-}
-
-.footer .contenedor .redes-sociales .youtube {
-    color: #c4302b;
-}
-
 .footer .contenedor .redes-sociales .social:hover i {
     transform: scale(1.3);
     color: #ffffff;
@@ -673,18 +827,6 @@ p {
 
 .footer .contenedor .redes-sociales .github::before {
     background: #333333;
-}
-
-.footer .contenedor .redes-sociales .instagram::before {
-    background: #bc2a8d;
-}
-
-.footer .contenedor .redes-sociales .twitter::before {
-    background: #00acee;
-}
-
-.footer .contenedor .redes-sociales .youtube::before {
-    background: #c4302b;
 }
 
 .footer .contenedor .redes-sociales .social:hover::before {
@@ -742,7 +884,7 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/** Media Queries **/
+/* Media Queries */
 @media only screen and (min-width: 48rem) {
     .menu {
         grid-template-columns: 10% auto 10%;

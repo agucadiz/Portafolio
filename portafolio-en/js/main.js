@@ -1,9 +1,3 @@
-window.onload = function () {
-  var barraCarga = document.getElementById('barra-carga');
-
-  barraCarga.style.visibility = 'hidden';
-  barraCarga.style.display = 'none';
-}
 $('document').ready(function () {
   //ANIMACIÓN DE "REVELACIÓN" DE TEXTO.
 
@@ -25,6 +19,7 @@ $('document').ready(function () {
 
   var boton = document.getElementById('boton');
 
+  /* Texto "Sobre mí" */
   $('#tagline').t({
     beep: false,
     caret: '<span style="color:hotpink;">•</span>',
@@ -41,7 +36,7 @@ $('document').ready(function () {
     }, 300);
   });
 
-  // Control del botón de desplazamiento hacia arriba basado en el desplazamiento vertical de la página
+  // Botón de desplazamiento se oculta en la parte superior
   $(window).scroll(function () {
     if ($(this).scrollTop() > 0) {
       $('#boton-arriba').slideDown(300);
@@ -51,13 +46,14 @@ $('document').ready(function () {
   });
 });
 
+// Navegación que destaca el elemento del menú correspondiente 
 document.addEventListener('DOMContentLoaded', function () {
   const menuItems = document.querySelectorAll('.menu a');
 
   window.addEventListener('scroll', function () {
     let currentSection = '';
 
-    // Determinar la sección actual
+    // Determinar la sección actual en base a la posición de desplazamiento
     for (const section of document.querySelectorAll('section')) {
       const rect = section.getBoundingClientRect();
       if (rect.top <= 150 && rect.bottom > 150) {
@@ -77,3 +73,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
